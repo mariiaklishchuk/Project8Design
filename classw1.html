@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugly Meme Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Comic Sans MS, cursive, sans-serif;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            background: repeating-linear-gradient(45deg, red, yellow 10%, green 20%);
+            color: lime;
+            text-align: center;
+            animation: spinBg 5s infinite linear, shake 0.5s infinite alternate;
+            filter: contrast(200%) saturate(300%);
+        }
+
+        @keyframes spinBg {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0, 0) rotate(0); }
+            25% { transform: translate(5px, -5px) rotate(2deg); }
+            50% { transform: translate(-5px, 5px) rotate(-2deg); }
+            75% { transform: translate(5px, 5px) rotate(2deg); }
+            100% { transform: translate(-5px, -5px) rotate(-2deg); }
+        }
+
+        .title {
+            font-size: 3rem;
+            text-shadow: 5px 5px 0px magenta;
+            animation: flicker 0.3s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .content {
+            font-size: 2rem;
+            background: pink;
+            width: 70%;
+            margin: 50px auto;
+            border: 10px dotted blue;
+            padding: 20px;
+            transform: skew(15deg);
+            animation: rainbowBorder 2s infinite;
+        }
+
+        @keyframes rainbowBorder {
+            0% { border-color: red; }
+            25% { border-color: yellow; }
+            50% { border-color: green; }
+            75% { border-color: cyan; }
+            100% { border-color: red; }
+        }
+
+        .floating-box {
+            position: absolute;
+            top: 50px;
+            left: 30%;
+            background: orange;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite alternate, spinText 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(50px) rotate(360deg); }
+        }
+
+        @keyframes spinText {
+            0% { letter-spacing: 0px; }
+            50% { letter-spacing: 10px; }
+            100% { letter-spacing: 0px; }
+        }
+
+        .weird-box {
+            float: right;
+            width: 150px;
+            height: 150px;
+            background: purple;
+            transform: rotate(45deg) scale(1.1);
+            animation: weirdSpin 4s infinite linear;
+        }
+
+        @keyframes weirdSpin {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(225deg) scale(1.5); }
+            100% { transform: rotate(405deg) scale(1); }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            padding: 10px;
+            animation: scrollLeft 10s linear infinite;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        footer:hover {
+            transform: scale(2) rotate(720deg);
+            background: red;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background: black;
+                color: red;
+                animation: none;
+            }
+
+            .content {
+                transform: rotate(180deg) scale(0.5);
+                background: lime;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Ugly Layout</h1>
+    </header>
+    <main>
+        <div class="content">
+            <p>Everything is ugly here.</p>
+        </div>
+        <div class="floating-box">Floating Chaos</div>
+        <div class="weird-box">Weird Box</div>
+    </main>
+    <footer>
+        <p>Hello Hello Hello.</p>
+    </footer>
+</body>
+</html>
